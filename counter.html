@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Counter</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .main {
+        height: 200px;
+        width: 800px;
+        border: 2px solid;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 15px;
+        padding: 10px;
+        background-color: black;
+      }
+      .counter {
+        /* border: 2px solid aqua; */
+        transition: 0.5s;
+        text-align: center;
+        
+        color: white;
+        
+      }
+      .counter:hover {
+        transform: scale(1.05);
+      }
+      .counter i
+      {
+        margin:25px 0 0 0;
+        font-size: 40px;
+        color: white;
+      }
+      .counter p
+      {
+        margin:5px 0 ;
+        font-size: 24px;
+      }
+      
+      .counter span
+      {
+        width: 50%;
+        height: 2px;
+        background-color: aqua;
+        display: block;
+        margin-left: 60px;
+        margin-bottom: 10px;
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="counter">
+        <i class="fa-brands fa-github"></i>
+        <p class="p1" id="t1">500</p>
+        <span></span>
+        <h2>GITHUB FOLLOWERS</h2>
+      </div>
+      <div class="counter">
+        <i class="fa-brands fa-youtube"></i>
+        <p class="p1" id="t2">700</p>
+        <span></span>
+        <h2>YOUTUBE SUBSCIBERS</h2></div>
+      <div class="counter">
+        <i class="fa-brands fa-r-project"></i>
+        <p class="p1" id="t3">200</p>
+        <span></span>
+        <h2>PROJECT DONE</h2>
+      </div>
+    </div>
+    <script>
+      g=document.getElementById("t1");
+      let c1 = setInterval(count1,100);
+      x=1;
+      yt=document.getElementById("t2");
+      let c2 = setInterval(count2,10);
+      y=1;
+      pr=document.getElementById("t3");
+      let c3 = setInterval(count3,100);
+      z=1;
+      
+      function count1()
+      {
+        x++;
+        g.innerHTML = x;
+        if(x==500)
+        {
+          clearInterval(c1);
+        }
+      }
+      
+      function count2()
+      {
+        y++;
+        yt.innerHTML = y;
+        if(y==700)
+        {
+          clearInterval(c2);
+        }
+      }
+      z=0;
+      function count3()
+      {
+        z++;
+        pr.innerHTML = z;
+        if(z==200)
+        {
+          clearInterval(c3);
+        }
+      }
+    </script>
+  </body>
+</html>

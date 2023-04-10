@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS FormValidation</title>
+</head>
+<body>
+    Name : <input type="text" id="name1"><br><br>
+    Email : <input type="email" id="email1"><br><br>
+    PassWord : <input type="password" id="pwd1"><br><br>
+    Confirm PassWord : <input type="password" id="pwd2"><br><br>
+
+    <input type="submit" onclick="validname()">
+    <!-- <button onclick="history.go(-1)">GO</button>
+    <button onclick="history.back()">Back</button> -->
+    <!-- <button onclick="history.forward()">forward</button> -->
+    <!-- <button onclick="history.length">length</button> -->
+    <script>
+        nm =document.getElementById("name1");
+        eml =document.getElementById("email1");
+        pass =document.getElementById("pwd1");
+        cpass =document.getElementById("pwd2");
+
+        function validname()
+        {
+                if(nm.value=="")
+                {
+                    alert("Please Enter your Name.....");
+                }
+                
+        }
+    </script>
+
+
+
+</body>
+</html>

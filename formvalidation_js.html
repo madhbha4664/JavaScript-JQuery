@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="" onsubmit="return validate()">
+
+    Name: <input type="text" id="nm">
+            <span id="res"></span>
+
+    <br><br>
+ 
+    password: <input type="text" id="pwd"> <br><br>
+
+    confirm password: <input type="text" id="cpwd"> <br><br>
+
+    Email: <input type="text" id="em"> <br><br>
+
+    Mobile: <input type="text" id="mb"> <br><br>
+
+     <!-- <input type="submit" onclick="return validate()"> <br><br> -->
+
+     <input type="submit"> <br><br>
+
+    </form>
+     
+     
+     <script>
+
+       name1 =  document.getElementById('nm');
+       email =  document.getElementById('em');
+       mobile =  document.getElementById('mb');
+       pass =  document.getElementById('pwd');
+       cpass =  document.getElementById('cpwd');
+
+       nmSpan =  document.getElementById('res');
+
+      
+
+       
+
+      
+
+      //ex_nm = /^[a-zA-Z]+$/;
+
+       ex_nm = /^[a-zA-Z]{3,6}$/;
+
+       
+
+    //    ex_mb= /^[0-9]+$/;
+    ex_mb= /^[0-9]{10}$/;
+
+       console.log(name1);
+
+       function validate()
+       {
+                if(name1.value == "")
+                {
+                    // alert("Name is required..!");
+                    //document.write("Name is required..!")
+                    nmSpan.innerHTML ="* Name is required..!";
+                    nmSpan.style.color ="red";
+                    name1.style.border = "2px solid red";
+                    return false;
+                }
+
+                else
+                {
+                    nmSpan.innerHTML =" ";
+                    name1.style.border = "2px solid green"
+                }
+
+                if(!ex_nm.test(name1.value))
+                {
+                    alert("min 3 and max 6 letters..!");
+                    return false;
+                }
+
+                if(pass.value == "")
+                {
+                    alert("Password is required..!");
+                    return false;
+                }
+
+                if(pass.value != cpass.value)
+                {
+                    alert("Passwords do not match..!");
+                    return 0;
+                }
+
+
+                if(email.value == "")
+                {
+                    alert("Email is required..!");
+                    return false;
+                }
+
+                if(mobile.value == "")
+                {
+                    alert("Mobile is required..!");
+                    return false;
+                }
+
+                if(!ex_mb.test(mobile.value))
+                {
+                    alert("10 digits only..!");
+                    return false;
+                }
+                
+       }
+      
+       
+     </script>
+
+</body>
+</html>

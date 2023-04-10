@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <input type="text" id="inpt" >
+    <button class="btn" onclick=" getValue('1')">1</button>
+    <button class="btn" onclick=" getValue('2')">2</button>
+    <button class="btn" onclick=" getValue('3')">3</button>
+    <button class="btn" onclick=" getValue('4')">4</button>
+    <button class="btn" onclick=" getValue('5')">5</button>
+    <button class="btn" onclick=" getValue('6')">6</button>
+        <script>
+
+       inp=document.getElementById('inpt');
+        b=document.getElementsByClassName('btn');
+
+        console.log(b)
+
+        for(i=0;i<b.length;i++)
+        {
+          function getValue(par)
+          {
+             inp.value = par;
+          }
+        }
+        
+
+     
+        
+    </script>
+</body>
+</html>

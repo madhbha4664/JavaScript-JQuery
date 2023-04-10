@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch JS</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(101, 181, 101, 0.374);
+            font-family: 'Poppins', sans-serif;
+        }
+        .clock
+        {
+            height: 500px;
+            width: 500px;
+            /* border: 2px solid; */
+            border-radius: 50%;
+            position: relative;
+            background-color: rgb(52, 223, 117);
+        }
+        .number
+        {
+            /* border: 2px solid; */
+            font-size: 43px;
+            font-weight: 900;
+        }
+        .number div
+        {
+            position: absolute;
+        }
+        .tweleve
+        {
+            top: 0;
+            left:45%;
+        }
+        .three
+        {
+            top:45%;
+            left:93%;
+        }
+        .six
+        {
+            bottom: -1%;
+            left:49%;
+        }
+        .nine
+        {
+            top: 45%;
+            left:1%;
+        }
+        .clock img{
+            position: absolute;
+            top: 15%;
+            left: 35%;
+            width: 30%;
+            z-index: 3;
+        }
+        .arrows 
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            
+        }
+        .arrows div{
+           
+            width: 8px;
+            position: absolute;
+            transform-origin: bottom center;
+            bottom: 50%;
+            border-radius: 50% 50% 0 0;
+            z-index: 7;
+            background-color: rgb(254, 221, 37);
+        }
+        .arrows::before
+        {
+            content: "";
+            height: 50px;
+            width: 50px;
+            background-color:whitesmoke;
+            border-radius: 50%;
+            z-index: 9;
+        }
+        .min
+        {
+            background-color: orangered;
+            height: 160px;
+            transform: rotate(50deg);
+        }
+        .hr
+        {
+            background-color: blue;
+            height: 150px;
+            transform: rotate(200deg);
+        }
+        .sec
+        {
+            height: 195px;
+            background-color: black;
+            transform: rotate(20deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="number">
+            <div class="tweleve">12</div>
+            <div class="three">3</div>
+            <div class="six">6</div>
+            <div class="nine">9</div>
+        </div>
+        <div class="arrows">
+            <div class="min"></div>
+            <div class="hr"></div>
+            <div class="sec"></div>
+        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/95/Rolex_logo.svg/1200px-Rolex_logo.svg.png" alt="no-image" >
+    </div>
+
+    <script>
+        const m=document.querySelector('.min');
+        const h=document.querySelector('.hr');
+        const s=document.querySelector('.sec');
+
+        function clock1()
+        {
+            const cdate = new Date();
+            const hvr=cdate.getHours();
+            const mint=cdate.getMinutes();
+            const secnd=cdate.getSeconds();
+
+            const hd=(hvr/12)*360;
+            h.style.transform=`rotate(${hd}deg)`;
+            const md=(mint/60)*360;
+            m.style.transform=`rotate(${md}deg)`;
+            const sd=(secnd/60)*360;
+            s.style.transform=`rotate(${sd}deg)`;            
+        }
+        setInterval(clock1,1000)
+        
+    </script>
+</body>
+</html>

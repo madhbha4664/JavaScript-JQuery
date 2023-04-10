@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        *
+        {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        .main
+        {
+            height: 100vh;
+            width: 100%;
+            background: coral;
+            position: relative;
+        }
+        .slider
+        {
+            height: 100vh;
+            width: 30%;
+            background-color: lightseagreen;
+            position: absolute;
+            top: 0;
+            left: -30%;
+            transition: .5s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+            color: white;
+           
+        }
+        #btn1
+        {
+            padding: 5px 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 20%;
+            background-color: black;
+            color: aliceblue;
+            position: absolute;
+            top: 0%;
+            right:  00%;
+        }
+        
+
+    </style>
+
+</head>
+<body>
+    <div class="main">
+        
+        <button id="btn1" onclick="slider_open()"><i class="fa-solid fa-bars"></i></button>
+        
+        <div class="slider">
+           <h1>Madhbha_muli</h1>
+        </div>
+    </div>
+      <script>
+        slider_div=document.querySelector(".slider");
+        fa=document.querySelector(".fa-solid");
+        btn1=document.querySelector("btn1");
+
+
+       
+        function slider_open()
+        {
+            if( fa.classList.toggle('fa-bars'))
+            {
+               
+                slider_div.style.left="-30%";
+               
+            }
+            if(fa.classList.toggle('fa-xmark'))
+            {
+                slider_div.style.left="0%"; 
+               
+            }
+              
+        }
+        
+      </script>
+</body>
+</html>
